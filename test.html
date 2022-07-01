@@ -18,29 +18,30 @@ body { margin: 0; padding: 0; }
 
 <script>
 	mapboxgl.accessToken = 'pk.eyJ1IjoiZGl4aXRwcml5YW5zaHUyMyIsImEiOiJjbDUyM2JiNDYwOTB6M2ZtdG14Y2FiNW0xIn0.s61Jb0KHGKrYu9_E_WIU4A';
-    // var map = new mapboxgl.Map({
-    //     container: 'map',
-    //     style: 'mapbox://styles/mapbox/streets-v11',
-    //     center: [position.coords.longitude, position.coords.latitude],
-    //     zoom: 13
-    // });
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [78.00807,
+                27.17667],
+        zoom: 13
+    });
 
-    if ("geolocation" in navigator) { 
-    navigator.geolocation.getCurrentPosition(position => { 
-        var map = new mapboxgl.Map({
-        // container id specified in the HTML
-          container: 'map',
+    // if ("geolocation" in navigator) { 
+    // navigator.geolocation.getCurrentPosition(position => { 
+    //     var map = new mapboxgl.Map({
+    //     // container id specified in the HTML
+    //       container: 'map',
 
-           // style URL
-          style: 'mapbox://styles/mapbox/light-v10',
+    //        // style URL
+    //       style: 'mapbox://styles/mapbox/light-v10',
 
-         // initial position in [lon, lat] format
-          center: [position.coords.longitude, position.coords.latitude],
+    //      // initial position in [lon, lat] format
+    //       center: [position.coords.longitude, position.coords.latitude],
 
-         // initial zoom
+    //      // initial zoom
 
-         zoom: 14
-        });
+    //      zoom: 14
+    //     });
 
         map.addControl(
         new MapboxDirections({
@@ -64,8 +65,8 @@ body { margin: 0; padding: 0; }
         console.log(position.coords.longitude);
         // var url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + position.coords.longitude + "," + position.coords.latitude+".json?access_token=pk.eyJ1IjoiZGl4aXRwcml5YW5zaHUyMyIsImEiOiJjbDUyM2JiNDYwOTB6M2ZtdG14Y2FiNW0xIn0.s61Jb0KHGKrYu9_E_WIU4A"
         
-    }); 
-} else { /* geolocation IS NOT available, handle it */ }
+//     }); 
+// } else { /* geolocation IS NOT available, handle it */ }
 
     map.addControl(
         new MapboxDirections({
